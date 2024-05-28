@@ -1,8 +1,11 @@
-EARLY WORD
+# EARLY WORD
 
-spring boot : 3.3.0
+spring boot : 3.3.0 
+
 JAVA : 17
+
 IDE : Intellij
+
 DB : mysql
 
 ### FIGMA (화면 설계)
