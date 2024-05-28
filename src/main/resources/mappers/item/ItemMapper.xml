@@ -11,5 +11,4 @@
         insert into item (item_name, item_price)
         values (#{itemName}, #{itemPrice})
     </insert>
-
 </mapper>
