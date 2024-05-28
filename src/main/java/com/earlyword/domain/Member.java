@@ -1,4 +1,4 @@
-package com.kr.earlyword.domain;
+package com.earlyword.domain;
 
 import lombok.*;
 

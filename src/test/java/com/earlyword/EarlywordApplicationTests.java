@@ -1,4 +1,4 @@
-package com.kr.earlyword;
+package com.earlyword;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
