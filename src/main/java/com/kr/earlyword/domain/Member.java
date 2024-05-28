@@ -1,18 +1,25 @@
 package com.kr.earlyword.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Builder
 @AllArgsConstructor
+@ToString
 public class Member {
-    private Long id;
-    private String username;
-    private String password;
+    private Long userId;
     private String email;
-    private LocalDateTime createAt;
+    private String password;
+    private String nickname;
+    private String phone;
+    private LocalDateTime createDate;
+
+    public Member(String email, String password, String nickname, String phone) {
+        this.email = email;
+        this.password = password;
+        this.nickname = nickname;
+        this.phone = phone;
+    }
 }
