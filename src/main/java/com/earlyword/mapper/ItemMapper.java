@@ -8,4 +8,6 @@ import com.earlyword.domain.Item;
 public interface ItemMapper {
 
 	Item findById(Long itemNumber);
+
+	int save(Item item);
 }

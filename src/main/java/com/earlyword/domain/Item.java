@@ -12,5 +12,5 @@ import lombok.ToString;
 public class Item {
 	private Long itemNumber;
 	private String itemName;
-	private String itemPrice;
+	private int itemPrice;
 }

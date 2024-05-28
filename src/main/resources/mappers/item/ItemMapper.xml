@@ -7,5 +7,9 @@
         select * from item where item_number = #{itemNumber}
     </select>
 
+    <insert id="save" parameterType="com.earlyword.domain.Item">
+        insert into item (item_name, item_price)
+        values (#{itemName}, #{itemPrice})
+    </insert>
 
 </mapper>
