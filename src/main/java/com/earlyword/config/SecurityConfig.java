@@ -27,16 +27,18 @@ public class SecurityConfig { //WebSecurityConfigurerAdapter was deprecated
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http
-			.csrf().disable()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		http.csrf()
+			.disable()
+			.sessionManagement()
+			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
-			.formLogin().disable()
-			.httpBasic().disable()
-			.authorizeRequests()
-			.antMatchers("/api/user").permitAll()
-			.and()
-			.oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
+			.formLogin()
+			.disable()
+			.httpBasic()
+			.disable()
+			.authorizeHttpRequests(
+				authorize -> authorize.requestMatchers("/api/user").permitAll().anyRequest().authenticated())
+			.oauth2Login(oauth2 -> oauth2.userInfoEndpoint().userService(customOAuth2UserService));
 		return http.build();
 	}
 }
