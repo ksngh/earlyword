@@ -33,8 +33,6 @@ public class OAuthAttributes {
 	}
 
 	public Member toEntity() {
-		return Member.builder()
-			.email(email)
-			.build();
+		return Member.builder().email(email).build();
 	}
 }
