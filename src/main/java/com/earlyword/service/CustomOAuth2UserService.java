@@ -11,16 +11,20 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
+import com.earlyword.DTO.OAuthAttributes;
+import com.earlyword.domain.Member;
+import com.earlyword.mapper.MemberMapper;
+
 import jakarta.servlet.http.HttpSession;
 
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-	private final UserRepository userRepository;
+	private final MemberMapper memberMapper;
 	private final HttpSession httpSession;
 
-	public CustomOAuth2UserService(UserRepository userRepository, HttpSession httpSession) {
-		this.userRepository = userRepository;
+	public CustomOAuth2UserService(MemberMapper memberMapper, HttpSession httpSession) {
+		this.memberMapper = CustomOAuth2UserService.this.memberMapper;
 		this.httpSession = httpSession;
 	}
 
@@ -34,21 +38,21 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
-		Users user = saveOrUpdate(attributes);
-		httpSession.setAttribute("user", new SessionUser(user));
+		Member member = saveOrUpdate(attributes);
+		httpSession.setAttribute("member", new SessionUser(member));
 
 		return new DefaultOAuth2User(
-			Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+			Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
 			attributes.getAttributes(),
 			attributes.getNameAttributeKey()
 		);
 	}
 
-	private Users saveOrUpdate(OAuthAttributes attributes) {
-		Users user = userRepository.findByEmail(attributes.getEmail())
+	private Member saveOrUpdate(OAuthAttributes attributes) {
+		Member member = memberMapper.findByEmail(attributes.getEmail())
 			.map(entity -> entity.update(attributes.getName()))
 			.orElse(attributes.toEntity());
 
-		return userRepository.save(user);
+		return memberMapper.save(member);
 	}
 }
