@@ -1,7 +1,6 @@
 package com.earlyword.service;
 
 import java.util.Collections;
-import java.util.Optional;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -36,18 +35,19 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		OAuth2User oAuth2User = delegate.loadUser(userRequest);
 
 		String registrationId = userRequest.getClientRegistration().getRegistrationId();
-		String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
+		String userNameAttributeName = userRequest.getClientRegistration()
+			.getProviderDetails()
+			.getUserInfoEndpoint()
+			.getUserNameAttributeName();
 
-		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName,
+			oAuth2User.getAttributes());
 
 		Member member = saveOrUpdate(attributes);
 		httpSession.setAttribute("member", new SessionMember(member));
 
-		return new DefaultOAuth2User(
-			Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
-			attributes.getAttributes(),
-			attributes.getNameAttributeKey()
-		);
+		return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
+			attributes.getAttributes(), attributes.getNameAttributeKey());
 	}
 
 	private Member saveOrUpdate(OAuthAttributes attributes) {
