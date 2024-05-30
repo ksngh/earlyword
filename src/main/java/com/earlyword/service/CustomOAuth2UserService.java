@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.earlyword.DTO.OAuthAttributes;
 import com.earlyword.domain.Member;
+import com.earlyword.domain.SessionMember;
 import com.earlyword.mapper.MemberMapper;
 
 import jakarta.servlet.http.HttpSession;
@@ -39,8 +40,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
-		Optional<Member> member = saveOrUpdate(attributes);
-		httpSession.setAttribute("member", new SessionUser(member));
+		Member member = saveOrUpdate(attributes);
+		httpSession.setAttribute("member", new SessionMember(member));
 
 		return new DefaultOAuth2User(
 			Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
@@ -49,7 +50,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		);
 	}
 
-	private Optional<Member> saveOrUpdate(OAuthAttributes attributes) {
+	private Member saveOrUpdate(OAuthAttributes attributes) {
 		Member member = memberMapper.findByEmail(attributes.getEmail())
 			.map(entity -> entity.update(attributes.getName()))
 			.orElse(attributes.toEntity());

@@ -3,9 +3,6 @@ package com.earlyword.domain;
 import lombok.*;
 
 import java.time.LocalDateTime;
-
-import javax.management.relation.Role;
-
 @Getter
 @Builder
 @AllArgsConstructor
@@ -20,11 +17,12 @@ public class Member {
     // @Enumerated(EnumType.STRING)
     private Role role;
 
-    public Member(String email, String password, String nickname, String phone) {
+    public Member(String email, String password, String nickname, String phone, Role role) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
         this.phone = phone;
+        this.role = role;
     }
 
     public Member update(String email) {
@@ -33,6 +31,6 @@ public class Member {
     }
 
     public String getRoleKey() {
-        // return this.role.getKey();
+        return this.role.getKey();
     }
 }
