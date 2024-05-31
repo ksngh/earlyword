@@ -12,7 +12,6 @@ import lombok.Getter;
 public class OAuthAttributes {
 	private Map<String, Object> attributes;
 	private String nameAttributeKey;
-	private String name;
 	private String email;
 
 	public static OAuthAttributes of(String registrationId, String userNameAttributeName,
@@ -25,7 +24,6 @@ public class OAuthAttributes {
 		Map<String, Object> account = (Map<String, Object>)attributes.get("profile");
 
 		return OAuthAttributes.builder()
-			.name((String)account.get("nickname"))
 			.email((String)response.get("email"))
 			.attributes(response)
 			.nameAttributeKey(userNameAttributeName)

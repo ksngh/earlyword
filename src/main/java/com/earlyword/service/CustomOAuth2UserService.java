@@ -1,6 +1,7 @@
 package com.earlyword.service;
 
 import java.util.Collections;
+import java.util.Optional;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -43,16 +44,16 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName,
 			oAuth2User.getAttributes());
 
-		Member member = saveOrUpdate(attributes);
-		httpSession.setAttribute("member", new SessionMember(member));
+		Optional<Member> member = saveOrUpdate(attributes);
+		httpSession.setAttribute("member", new SessionMember(member.get()));
 
-		return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.getRoleKey())),
+		return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(member.get().getRoleKey())),
 			attributes.getAttributes(), attributes.getNameAttributeKey());
 	}
 
-	private Member saveOrUpdate(OAuthAttributes attributes) {
+	private Optional<Member> saveOrUpdate(OAuthAttributes attributes) {
 		Member member = memberMapper.findByEmail(attributes.getEmail())
-			.map(entity -> entity.update(attributes.getName()))
+			.map(entity -> entity.update(attributes.getEmail()))
 			.orElse(attributes.toEntity());
 
 		return memberMapper.save(member);

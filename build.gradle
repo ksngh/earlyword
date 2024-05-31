@@ -40,7 +40,7 @@ dependencies {
 
 	// mybatis & mysql
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-	implementation 'com.mysql:mysql-connector-j:8.0.33'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	//lombok
 	compileOnly 'org.projectlombok:lombok'

@@ -10,5 +10,5 @@ import com.earlyword.domain.Member;
 public interface MemberMapper {
 	Optional<Member> findByEmail(String email);
 
-	Member save(Member member);
+	Optional<Member> save(Member member);
 }
