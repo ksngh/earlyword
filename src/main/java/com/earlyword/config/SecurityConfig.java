@@ -35,6 +35,10 @@ public class SecurityConfig {
 			.sessionManagement(
 				sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.formLogin()
+				// .formLogin(formLogin -> formLogin
+				// 	.loginPage("/login") // 사용자 정의 로그인 페이지 경로 설정
+				// 	.defaultSuccessUrl("/index")) // 로그인 성공 시 리다이렉트 경로 설정
+				// .failureUrl("/your-login-path?error=true") // 로그인 실패 시 리다이렉트 경로 설정)
 			.disable()
 			.httpBasic()
 			.disable()
@@ -42,7 +46,8 @@ public class SecurityConfig {
 				authorizeRequests -> authorizeRequests.requestMatchers(new MvcRequestMatcher(introspector, "/api/user"))
 					.permitAll()
 					.anyRequest()
-					.authenticated())
+					.permitAll())
+					// .authenticated())
 			.oauth2Login(oauth2Login -> oauth2Login.userInfoEndpoint(
 				userInfoEndpointConfig -> userInfoEndpointConfig.userService(customOAuth2UserService)));
 
