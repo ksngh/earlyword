@@ -2,7 +2,10 @@ package com.earlyword.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.earlyword.service.OAuthService.KakaoConnection;
+
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -12,19 +15,15 @@ public class LoginController {
 	private final KakaoConnection kakaoConnection;
 
 	@GetMapping("/login")
-	String login(){
+	String login() {
 		return "redirect:"
 			.concat(kakaoConnection.makeURL());
 	}
 
-	// @GetMapping("/oauth/kakao/callback/")
-	// String callback(){
-	//
-	// }
-	//
-	// @PostMapping("/oauth/kakao/callback/")
-	// String getToken(){
-	//
-	// }
+	@GetMapping("/oauth/kakao/callback/")
+	String callback(@RequestParam("code") String code) {
+		kakaoConnection.getToken(code);
+		return "redirect:/";
+	}
 
 }
