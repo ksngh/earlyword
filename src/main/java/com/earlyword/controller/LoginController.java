@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.earlyword.dto.oauth.KakaoTokenDTO;
 import com.earlyword.service.OAuthService.KakaoConnection;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,8 @@ public class LoginController {
 
 	@GetMapping("/oauth/kakao/callback/")
 	String callback(@RequestParam("code") String code) {
-		kakaoConnection.getToken(code);
+		KakaoTokenDTO kakaoTokenDTO = kakaoConnection.getToken(code);
+		kakaoConnection.getUserInfo(kakaoTokenDTO);
 		return "redirect:/";
 	}
 
