@@ -1,4 +1,4 @@
-package com.earlyword.service.OAuthService;
+package com.earlyword.service.OAuthservice;
 
 
 

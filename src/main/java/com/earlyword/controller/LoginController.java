@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.earlyword.dto.oauth.KakaoTokenDTO;
-import com.earlyword.service.OAuthService.KakaoConnection;
+import com.earlyword.service.OAuthservice.KakaoConnection;
 
 import lombok.RequiredArgsConstructor;
 
