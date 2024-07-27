@@ -1,0 +1,31 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN">
+<mapper namespace="com.earlyword.mapper.MemberMapper">
+
+    <!-- 전체 회원 조회 -->
+    <select id="selectAllMembers" resultType="com.example.model.Member">
+        SELECT * FROM members
+    </select>
+
+    <!-- 이메일로 회원 조회 -->
+    <select id="selectMemberByEmail" parameterType="String" resultType="com.earlyword.domain.Member">
+        SELECT * FROM members WHERE email = #{email}
+    </select>
+
+    <!-- 회원 추가 -->
+    <insert id="insertMember" parameterType="com.earlyword.domain.Member">
+        INSERT INTO members (email,nickname) VALUES (#{email},#{nickname})
+    </insert>
+
+    <!-- 회원 정보 수정 -->
+    <update id="updateMember" parameterType="com.example.model.Member">
+        UPDATE members SET nickname = #{nickname} WHERE email = #{email}
+    </update>
+
+    <!-- 회원 삭제 -->
+    <delete id="deleteMember" parameterType="email">
+        DELETE FROM members WHERE email = #{email}
+    </delete>
+
+</mapper>
