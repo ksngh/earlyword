@@ -20,6 +20,6 @@ public class QuestionService {
 	}
 
 	public List<Question> getQuestions() throws IOException {
-		return objectMapper.readValue(new ClassPathResource("content/question_cpa.json").getFile(), new TypeReference<List<Question>>() {});
+		return objectMapper.readValue(new ClassPathResource("content/question_test.json").getFile(), new TypeReference<List<Question>>() {});
 	}
 }

@@ -1,112 +1,112 @@
 [
   {
-    "question": "ubiquitous",
-    "answer": "어디에나 있는, 도처에 존재하는",
+    "question": "What does the word 'abundant' mean?",
+    "correctAnswer": "a) 풍부한",
     "choices": [
-      "어디에나 있는, 도처에 존재하는",
-      "자애로운, 친절한",
-      "솔직한, 정직한",
-      "익살맞은, 경박한",
-      "사교적인, 군집성의"
+      "a) 풍부한",
+      "b) 부족한",
+      "c) 제한된",
+      "d) 불충분한",
+      "e) 드문"
     ]
   },
   {
-    "question": "benevolent",
-    "answer": "자애로운, 친절한",
+    "question": "What is the meaning of 'facilitate'?",
+    "correctAnswer": "c) 쉽게 하다",
     "choices": [
-      "어디에나 있는, 도처에 존재하는",
-      "자애로운, 친절한",
-      "솔직한, 정직한",
-      "익살맞은, 경박한",
-      "사교적인, 군집성의"
+      "a) 복잡하게 하다",
+      "b) 지연시키다",
+      "c) 쉽게 하다",
+      "d) 방해하다",
+      "e) 막다"
     ]
   },
   {
-    "question": "candid",
-    "answer": "솔직한, 정직한",
+    "question": "What does 'implement' refer to?",
+    "correctAnswer": "b) 실행하다",
     "choices": [
-      "어디에나 있는, 도처에 존재하는",
-      "자애로운, 친절한",
-      "솔직한, 정직한",
-      "익살맞은, 경박한",
-      "사교적인, 군집성의"
+      "a) 관찰하다",
+      "b) 실행하다",
+      "c) 연기하다",
+      "d) 제안하다",
+      "e) 질문하다"
     ]
   },
   {
-    "question": "facetious",
-    "answer": "익살맞은, 경박한",
+    "question": "What does 'withdraw' mean?",
+    "correctAnswer": "a) 철수하다",
     "choices": [
-      "어디에나 있는, 도처에 존재하는",
-      "자애로운, 친절한",
-      "솔직한, 정직한",
-      "익살맞은, 경박한",
-      "사교적인, 군집성의"
+      "a) 철수하다",
+      "b) 증가하다",
+      "c) 보존하다",
+      "d) 개선하다",
+      "e) 연기하다"
     ]
   },
   {
-    "question": "gregarious",
-    "answer": "사교적인, 군집성의",
+    "question": "What is the meaning of 'compliance'?",
+    "correctAnswer": "c) 준수",
     "choices": [
-      "어디에나 있는, 도처에 존재하는",
-      "자애로운, 친절한",
-      "솔직한, 정직한",
-      "익살맞은, 경박한",
-      "사교적인, 군집성의"
+      "a) 위반",
+      "b) 무시",
+      "c) 준수",
+      "d) 변경",
+      "e) 제재"
     ]
   },
   {
-    "question": "idiosyncratic",
-    "answer": "특이한, 독특한",
+    "question": "What does 'negotiate' mean?",
+    "correctAnswer": "d) 협상하다",
     "choices": [
-      "병렬, 나란히 놓기",
-      "전형적인, 본질적인",
-      "회복력 있는, 탄력 있는",
-      "특이한, 독특한",
-      "말이 없는, 과묵한"
+      "a) 계약하다",
+      "b) 입회하다",
+      "c) 제안하다",
+      "d) 협상하다",
+      "e) 해석하다"
     ]
   },
   {
-    "question": "juxtaposition",
-    "answer": "병렬, 나란히 놓기",
+    "question": "What does the word 'sustain' mean?",
+    "correctAnswer": "b) 유지하다",
     "choices": [
-      "병렬, 나란히 놓기",
-      "전형적인, 본질적인",
-      "회복력 있는, 탄력 있는",
-      "특이한, 독특한",
-      "말이 없는, 과묵한"
+      "a) 증가시키다",
+      "b) 유지하다",
+      "c) 방해하다",
+      "d) 대체하다",
+      "e) 제거하다"
     ]
   },
   {
-    "question": "quintessential",
-    "answer": "전형적인, 본질적인",
+    "question": "What does 'distribution' refer to?",
+    "correctAnswer": "a) 분배",
     "choices": [
-      "병렬, 나란히 놓기",
-      "전형적인, 본질적인",
-      "회복력 있는, 탄력 있는",
-      "특이한, 독특한",
-      "말이 없는, 과묵한"
+      "a) 분배",
+      "b) 생산",
+      "c) 소비",
+      "d) 수익",
+      "e) 마케팅"
     ]
   },
   {
-    "question": "resilient",
-    "answer": "회복력 있는, 탄력 있는",
+    "question": "What does 'convey' mean?",
+    "correctAnswer": "d) 전달하다",
     "choices": [
-      "병렬, 나란히 놓기",
-      "전형적인, 본질적인",
-      "회복력 있는, 탄력 있는",
-      "특이한, 독특한",
-      "말이 없는, 과묵한"
+      "a) 받아들이다",
+      "b) 요구하다",
+      "c) 감추다",
+      "d) 전달하다",
+      "e) 설명하다"
     ]
   },
   {
-    "question": "taciturn",
-    "answer": "말이 없는, 과묵한",
+    "question": "What is the meaning of 'evaluate'?",
+    "correctAnswer": "c) 평가하다",
     "choices": [
-      "병렬, 나란히 놓기",
-      "전형적인, 본질적인",
-      "회복력 있는, 탄력 있는",
-      "특이한, 독특한",
-      "말이 없는, 과묵한"
+      "a) 수정하다",
+      "b) 제안하다",
+      "c) 평가하다",
+      "d) 비교하다",
+      "e) 관찰하다"
     ]
   }
 ]
