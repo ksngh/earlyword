@@ -9,8 +9,8 @@ import com.earlyword.mapper.MemberMapper;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class MemberService {
 
 	private final MemberMapper memberMapper;

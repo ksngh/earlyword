@@ -23,21 +23,7 @@ public class SecurityConfig {
 				authorizeRequests.anyRequest().permitAll());
 
 		// 사이트 위변조 요청 방지
-		http.csrf().disable();
-
-		// 로그인 설정
-		// http.formLogin()
-		// 	.loginPage("/user2/login")
-		// 	.defaultSuccessUrl("/user2/loginSuccess")
-		// 	.failureUrl("/user2/login?success=100)")
-		// 	.usernameParameter("uid")
-		// 	.passwordParameter("pass");
-		//
-		// // 로그아웃 설정
-		// http.logout()
-		// 	.invalidateHttpSession(true)
-		// 	.logoutRequestMatcher(new AntPathRequestMatcher("/user2/logout"))
-		// 	.logoutSuccessUrl("/user2/login?success=200");
+		// http.csrf().disable();
 
 
 		return http.build();

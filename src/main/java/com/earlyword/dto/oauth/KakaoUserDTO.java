@@ -12,6 +12,6 @@ import lombok.ToString;
 @ToString
 @Builder
 public class KakaoUserDTO {
-	private String profileNickname;
-	private String accountEmail;
+	private String nickname;
+	private String email;
 }

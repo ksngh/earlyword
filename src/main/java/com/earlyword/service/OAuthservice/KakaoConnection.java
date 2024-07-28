@@ -116,8 +116,8 @@ public class KakaoConnection {
 
 			// KakaoUserDTO 생성
 			kakaoUserDTO = KakaoUserDTO.builder()
-				.profileNickname(profile.get("nickname").getAsString())
-				.accountEmail(kakaoAccount.get("email").getAsString())
+				.nickname(profile.get("nickname").getAsString())
+				.email(kakaoAccount.get("email").getAsString())
 				.build();
 
 			System.out.println(kakaoUserDTO.toString());

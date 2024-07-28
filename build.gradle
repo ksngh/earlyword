@@ -34,6 +34,8 @@ dependencies {
 	//타임리프
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
+	//mysql
+	implementation 'mysql:mysql-connector-java:8.0.28'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -42,7 +44,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 }
 
 tasks.named('test') {
